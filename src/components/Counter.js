@@ -73,14 +73,20 @@ export default function Counter() {
   return (
     <div className="widget-counter container">
       <h2>Counter</h2>
+<<<<<<< HEAD
       <div style={style}>
         Number {count} is {count % 2 ? "odd" : "even"}
       </div>
       {/* STEP 3 */}
+=======
+      <div id='count' style={style}>
+        Number 0 is even {/* STEP 3 */}
+      </div>
+>>>>>>> main
       <div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-        <button onClick={reset}>Reset</button>
+        <button id='increment' onClick={increment}>Increment</button>
+        <button id='decrement' onClick={decrement}>Decrement</button>
+        <button id='resetCount' onClick={reset}>Reset</button>
       </div>
     </div>
   );

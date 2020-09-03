@@ -15,6 +15,7 @@ import React, { useState } from "react";
 
 // Use this variable ONLY to initialize a slice of state!
 // There is something in the JSX right now breaking this rule...
+<<<<<<< HEAD
 const listOfAwesome = [
   { id: "1", name: "Ada Lovelace" },
   { id: "2", name: "Grace Hopper" },
@@ -22,6 +23,15 @@ const listOfAwesome = [
   { id: "4", name: "Mary Kenneth Keller" },
   { id: "5", name: "Frances Allen" },
   { id: "6", name: "Carol Shaw" },
+=======
+export const listOfAwesome = [
+  { id: '1', name: 'Ada Lovelace' },
+  { id: '2', name: 'Grace Hopper' },
+  { id: '3', name: 'Evelyn Boyd Granville' },
+  { id: '4', name: 'Mary Kenneth Keller' },
+  { id: '5', name: 'Frances Allen' },
+  { id: '6', name: 'Carol Shaw' },
+>>>>>>> main
 ];
 
 export default function Programmers() {
@@ -44,9 +54,15 @@ export default function Programmers() {
   };
 
   const style = {
+<<<<<<< HEAD
     fontSize: "1.5em",
     marginTop: "0.5em",
     color: id ? "gold" : "royalblue", // 🤔
+=======
+    fontSize: '1.5em',
+    marginTop: '0.5em',
+    color: 'royalblue', // 🤔 color turns to gold, when celebrating
+>>>>>>> main
   };
 
   return (
@@ -57,6 +73,7 @@ export default function Programmers() {
           /* Nasty bug! We should map over a slice of state, instead of 'listOfAwesome'.
           We might think: "it works, though!" But if the list of programmers is not state,
           we could never add or edit programmers in the future. The list would be a static thing." */
+<<<<<<< HEAD
           programmers.map((dev) => (
             <div key={dev.id}>
               {dev.name}{" "}
@@ -65,10 +82,16 @@ export default function Programmers() {
               >
                 Feature
               </button>
+=======
+          listOfAwesome.map(dev =>
+            <div className='programmer' key={dev.id}>
+              {dev.name} <button onClick={() => { /* in here set the featured id to be dev.id */ }}>Feature</button>
+>>>>>>> main
             </div>
           ))
         }
       </div>
+<<<<<<< HEAD
       {
         // Ternaries are fantastic to render "one thing or the other" depending on the "truthiness" of something.
         // Pseudo-code: if the currently featured id is truthy render div 1, otherwise render div 2.
@@ -81,6 +104,18 @@ export default function Programmers() {
           <div style={style}>Pick an awesome programmer</div>
         )
       }
+=======
+      <div id='featured' style={style}>
+        {
+          // Ternaries are fantastic to render "one thing or the other" depending on the "truthiness" of something.
+          // Pseudo-code: if the currently featured id is truthy render text 1, otherwise render text 2.
+          // Replace the hard-coded false with the correct variable.
+          false
+            ? `🎉 Let's celebrate ${getNameOfFeatured()}! 🥳`
+            : 'Pick an awesome programmer'
+        }
+      </div>
+>>>>>>> main
     </div>
   );
 }

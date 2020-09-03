@@ -60,11 +60,15 @@ export default function Moods() {
   return (
     <div className="widget-moods container">
       <h2>Moods</h2>
+<<<<<<< HEAD
       <div style={style}>{mood}</div> {/* STEP 3 */}
+=======
+      <div id='mood' style={style}>Not sure how I feel</div> {/* STEP 3 */}
+>>>>>>> main
       <div>
-        <button onClick={makeHappy}>Make Happy</button>
-        <button onClick={makeSad}>Make Sad</button>
-        <button onClick={reset}>Reset</button>
+        <button id='makeHappy' onClick={makeHappy}>Make Happy</button>
+        <button id='makeSad' onClick={makeSad}>Make Sad</button>
+        <button id='resetMood' onClick={reset}>Reset</button>
       </div>
     </div>
   );
